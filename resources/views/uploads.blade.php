@@ -54,98 +54,14 @@
                       </ul>
                   </div>
       
-                  <form action="/upload/add" method="post" enctype="multipart/form-data">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                  
                       <div class="tab-content">
-                          <div class="tab-pane active" role="tabpanel" id="step1">
-                              <div class="step1">
-                                  <div class="row">
-                                      <div class="col-md-6">
-                                        <label class="control-label col-sm-4" for="email">No. de Cotización: </label>
-                                        <p class="form-control-static">Prodemex 001 swj</p>
-                                      </div>
-                                      <div class="col-md-6">
-                                      </div>
-                                  <div class="col-md-6">
-                                      <label for="cliente">Cliente:</label>
-                                      <input type="text" class="form-control" id="nameClient" placeholder="Nombre Cliente" name="nameClient">
-                                  </div>
-                                  <div class="col-md-6">
-                                    <label for="exampleInputEmail1">Abreviación:</label>
-                                    <input type="text" class="form-control" id="abreviation" placeholder="Abreviacion" name="abreviation">
-                                </div>
-                                <div class="col-md-6">
-                                  <label for="exampleInputEmail1">Pago Anticipo: </label>
-                                  <input type="text" class="form-control" id="anticipo" placeholder="Anticipo" name="anticipo">
-                              </div>
-                                  <div class="col-md-6">
-                                      <label for="exampleInputEmail1">Direccion: </label>
-                                      <input type="text" class="form-control" id="direction" placeholder="Direccion" name="direction">
-                                  </div>
-                                </div>
-                                
-                                <div class="row">
-                                    <div class="col-md-6">
-                                      <label for="exampleInputEmail1">Email</label>
-                                      <input type="email" class="form-control" id="email" placeholder="Email" name="email">
-                                    </div>
 
-                                    <div class="col-md-6">
-                                        <label for="exampleInputEmail1">Telefono</label>
-                                        <input type="text" class="form-control" id="tel" placeholder="Telefono" name="tel">
-                                    </div>
-                                </div>
+                        @include('steps.one')  
+                        @include('steps.two')  
+                        @include('steps.three')  
 
-                                <div class="row">
-                                    <div class="col-md-4 col-xs-3">
-                                        <label>Enviada por:</label>
-                                    </div>
-                                    
-                                    <div class="col-md-8 col-xs-9">
-                                        <select name="highest_qualification" id="highest_qualification" class="dropselectsec form-control">
-                                            <option value="">Encargado </option>
-                                            <option value="1">Swat Millan Baza</option>
-                                            <option value="2">Victor Vargas Cruz </option>
-                                            <option value="3">Teresa de Jesus Tolentino</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                              <div class="row"> 
-                                 <div class="col-md-6">
-                                    <label>Nombre del archivo</label>
-                                    <input type="text" id="nomArchivo" name="nomArchivo">
-                                </div>
-
-                                <div class="col-md-6">
-                                    <input type="file" name="file">
-                                    <input type="submit" value="Guardar Archivo">
-                                </div>
-                              </div>
-
-  
-                              </div>
-                              
-                              <ul class="list-inline pull-right">
-                                  <li><button type="button" class="btn btn-primary next-step">Guardar y Continuar </button></li>
-                              </ul>
-                          </div>
-                          <div class="tab-pane" role="tabpanel" id="step2">
-                              <div class="step2">
-                                  <div class="step_21">
-                                      <div class="row">
-                                          <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value=" " id="defaultCheck1">
-                                            <
-                                              
-                                            </div>
-                                      </div>
-                                  </div>
-                                  <div class="step-22">
-                                  
-                                  </div>
-                              </div>
-                          </div>
+                        
                           <div class="tab-pane" role="tabpanel" id="step3">
                               <div class="step33">
                               <h5><strong>Basic Details</strong></h5>
@@ -328,13 +244,13 @@
                           </div>
                           <div class="clearfix"></div>
                       </div>
-                  </form>
               </div>
           </section>
          </div>
                
-         <div class="progress">
-          <div class="progress-bar" role="progressbar" style="width: 15%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">25%</div>
-      </div>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">15%</div>
+        </div>
     @include('footer')
+    <script type="text/javascript" src="{{URL::asset('js/app/client.js')}}"></script>
     @yield('javascript')

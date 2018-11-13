@@ -7,21 +7,21 @@ use Validator;
 use Response;
 use Illuminate\Http\Request;
 
-use App\Factura; 
+use App\Archivo; 
 use App\Cliente; 
 
 class UploadController extends Controller
 {
 
-    private $factura;
+    private $archivo;
 
     private $clientes;
 
     private $request;
 
-    public function __construct(Factura $factura, Cliente $clientes, Request $request ) 
+    public function __construct(Archivo $archivo, Cliente $clientes, Request $request ) 
     {
-        $this->factura =  $factura;
+        $this->archivo =  $archivo;
         $this->clientes = $clientes;
         $this->request  = $request;
 
@@ -32,30 +32,22 @@ class UploadController extends Controller
         return view('uploads');
     }
 
-    public function uploadFiles( ) 
+    public function uploadFiles() 
     {
        
-        //if( $this->uploadFactura() !== false ) {
-            $this->factura->archivofact = $this->uploadFactura();
-            $this->factura->save();
-        //}
-        
-        //$this->clientes->fill($this->request->all())->save();
-        return redirect('/upload')->with('message', 'Se ha subido correctamente');
+        $this->archivo->ruta = $this->uploadFactura();
+        $this->archivo->nombre = $this->request->get('nomArchivo');
+        $this->archivo->save();
+
+        $this->clientes->fill($this->request->all())->save();
+        return response()->json(['success' => true, 'message' => 'Información guardada correctamente']);
     }
 
     private function storageInfo() {
-        // Validar
     }
 
     private function uploadFactura() 
     {
-        /*$file = array_get($input,'file');
-        $destinationPath = 'uploads';
-        $extension = $file->getClientOriginalExtension();
-        $fileName = rand(11111, 999999) . '.' . $extension; 
-        $upload_success = $file->move($destinationPath, $fileName);*/
-
         $upload_success = $this->request->file('file')->store('facturas');
         return ($upload_success) ? $upload_success : false;
     }
