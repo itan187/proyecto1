@@ -9,9 +9,12 @@ use Illuminate\Http\Request;
 
 use App\Archivo; 
 use App\Cliente; 
+use App\OrdenCompra;
 
 class UploadController extends Controller
 {
+
+    private $ordeCompra;
 
     private $archivo;
 
@@ -19,8 +22,9 @@ class UploadController extends Controller
 
     private $request;
 
-    public function __construct(Archivo $archivo, Cliente $clientes, Request $request ) 
+    public function __construct(Archivo $archivo, Cliente $clientes, Request $request, OrdenCompra $ordeCompra ) 
     {
+        $this->ordeCompra = $ordeCompra;
         $this->archivo =  $archivo;
         $this->clientes = $clientes;
         $this->request  = $request;
@@ -32,7 +36,7 @@ class UploadController extends Controller
         return view('uploads');
     }
 
-    public function uploadFiles() 
+    public function storeCliente() 
     {
        
         $this->archivo->ruta = $this->uploadFactura();
@@ -43,13 +47,16 @@ class UploadController extends Controller
         return response()->json(['success' => true, 'message' => 'Información guardada correctamente']);
     }
 
-    private function storageInfo() {
-    }
 
     private function uploadFactura() 
     {
         $upload_success = $this->request->file('file')->store('facturas');
         return ($upload_success) ? $upload_success : false;
+    }
+
+    public function storeOdenCompra() {
+        //$this->ordeCompra
+        
     }
 
     

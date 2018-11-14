@@ -20,4 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 */
 
 
-Route::post('/steps/one', 'UploadController@uploadFiles');
+Route::post('/steps/one', 'UploadController@storeCliente');
+Route::post('/steps/two', 'UploadController@storeOdenCompra');
