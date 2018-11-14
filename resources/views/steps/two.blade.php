@@ -45,7 +45,7 @@
 
                                 <div class="col-md-12 form-group">
                                     <label class="" for="archivoOrden">Archivo: </label>
-                                    <input name="file" id="archivoOrden" type="archivoOrden" class="form-control" required/>
+                                    <input name="archivoOrden" id="archivoOrden" type="file" class="form-control" required/>
                                 </div>
                             </div>
                         </div>

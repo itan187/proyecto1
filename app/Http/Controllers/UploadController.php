@@ -14,7 +14,7 @@ use App\OrdenCompra;
 class UploadController extends Controller
 {
 
-    private $ordeCompra;
+    private $ordenCompra;
 
     private $archivo;
 
@@ -22,9 +22,9 @@ class UploadController extends Controller
 
     private $request;
 
-    public function __construct(Archivo $archivo, Cliente $clientes, Request $request, OrdenCompra $ordeCompra ) 
+    public function __construct(Archivo $archivo, Cliente $clientes, Request $request, OrdenCompra $ordenCompra ) 
     {
-        $this->ordeCompra = $ordeCompra;
+        $this->ordenCompra = $ordenCompra;
         $this->archivo =  $archivo;
         $this->clientes = $clientes;
         $this->request  = $request;
@@ -38,7 +38,6 @@ class UploadController extends Controller
 
     public function storeCliente() 
     {
-       
         $this->archivo->ruta = $this->uploadFactura();
         $this->archivo->nombre = $this->request->get('nomArchivo');
         $this->archivo->save();
