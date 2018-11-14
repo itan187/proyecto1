@@ -12,8 +12,8 @@
 
                             <div class="panel-body">
                                 <div class="col-md-12 form-group">
-                                    <label class="" for="email">Estatus: </label>
-                                    <select name="" id="" class="form-control">
+                                    <label class="" for="status">Estatus: </label>
+                                    <select name="status" id="status" class="form-control" required>
                                         <option value="Autorizado">Autorizado</option>
                                         <option value="Pendiente">Pendiente</option>
                                         <option value="Realizado">Realizado</option>
@@ -21,8 +21,8 @@
                                 </div>
         
                                 <div class="col-md-12 form-groups">
-                                    <label class="" for="email">Observaciones: </label>
-                                    <textarea name="" class="form-control"></textarea>
+                                    <label class="" for="observations">Observaciones: </label>
+                                    <textarea name="observations" id="observations" class="form-control"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -39,13 +39,13 @@
                             <div class="panel-body">
 
                                 <div class="col-md-12 form-group">
-                                    <label class="" for="email">Nombre del archivos: </label>
-                                    <input name="" id="" type="text" class="form-control"/>
+                                    <label class="" for="nombreArchivoOrden">Nombre del archivos: </label>
+                                    <input name="nombreArchivoOrden" id="nombreArchivoOrden" type="text" class="form-control" required/>
                                 </div>
 
                                 <div class="col-md-12 form-group">
-                                    <label class="" for="email">Archivo: </label>
-                                    <input name="file" id="file" type="file" class="form-control"/>
+                                    <label class="" for="archivoOrden">Archivo: </label>
+                                    <input name="file" id="archivoOrden" type="archivoOrden" class="form-control" required/>
                                 </div>
                             </div>
                         </div>

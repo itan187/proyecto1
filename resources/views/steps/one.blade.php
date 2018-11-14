@@ -71,6 +71,6 @@
         
         <ul class="list-inline pull-right">
             <li><button type="submit" class="btn btn-primary next-step" id="">Guardar y Continuar </button></li>
-        </ul>
+        </ul><br><br>
     </form>
 </div>

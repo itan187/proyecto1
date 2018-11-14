@@ -50,13 +50,23 @@ class UploadController extends Controller
 
     private function uploadFactura() 
     {
-        $upload_success = $this->request->file('file')->store('facturas');
+        $upload_success = $this->request->file('file')->store('archivos');
         return ($upload_success) ? $upload_success : false;
     }
 
-    public function storeOdenCompra() {
-        //$this->ordeCompra
-        
+    public function storeOdenCompra() 
+    {
+        $this->ordenCompra->fill($this->request->all());
+        $this->ordenCompra->archivoOrden = $this->uploadOrdenCompra();
+        $this->ordenCompra->save();
+
+        return response()->json(['success' => true, 'message' => 'Información guardada correctamente']);        
+    }
+
+    private function uploadOrdenCompra() 
+    {
+        $upload_success = $this->request->file('archivoOrden')->store('ordenCompras');
+        return ($upload_success) ? $upload_success : false;
     }
 
     

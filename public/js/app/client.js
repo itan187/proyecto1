@@ -8,10 +8,15 @@ $(document).ready(function(){
             method : "POST",
             data   :  new FormData( this ),
             success : function(data) {
-                $('#step2Boton').trigger('click');
-                $('#barProgress').css("width", "20%");
-                $('#barProgress').attr("aria-valuenow", "20");
-                $('#barProgress').text("20%");
+                if(data.success) {
+                    $('li.presentation').removeClass('active disabled');
+                    $('#step2Option').addClass('active');
+                    
+                    $('div.tab-pane').removeClass('active disabled');
+                    $('#step2').addClass('active');
+
+                    $('#barProgress').css('width', '20%').attr('aria-valuenow', '20').text('20%');
+                }
             },
             error : function(error){ console.error(error); },
             contentType: false,
@@ -22,17 +27,20 @@ $(document).ready(function(){
 
     $('#formDataStepTwo').on('submit', function (e) {
         e.preventDefault();
-        alert("a");
-
         $.ajax({
             url    : "/api/steps/two",
             method : "POST",
             data   :  new FormData( this ),
             success : function(data) {
-                $('#step3Boton').trigger('click');
-                $('#barProgress').css("width", "40%");
-                $('#barProgress').attr("aria-valuenow", "40");
-                $('#barProgress').text("40%");
+                if(data.success) {
+                    $('li.presentation').removeClass('active disabled');
+                    $('#step3Option').addClass('active');
+                    
+                    $('div.tab-pane').removeClass('active disabled');
+                    $('#step3').addClass('active');
+
+                    $('#barProgress').css('width', '40%').attr('aria-valuenow', '40').text('40%');
+                }
             },
             error : function(error){ console.error(error); },
             contentType: false,
