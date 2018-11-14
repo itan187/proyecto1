@@ -8,7 +8,7 @@ class OrdenCompra extends Model
 {
     protected $table = "orden_de_compra"; 
 
-    protected $fillable = ['archivoOrden', 'observations', 'status', 'client_idclient']; 
+    protected $fillable = ['archivoOrden', 'observations', 'status', 'client_idclient', 'nombreArchivoOrden']; 
 
     public $timestamps = false; 
 
