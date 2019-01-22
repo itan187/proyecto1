@@ -43,14 +43,6 @@
                                 </span>
                             </a>
                         </li>
-    
-                        <li role="presentation" class="disabled">
-                            <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
-                                <span class="round-tab">
-                                    <i class="glyphicon glyphicon-ok"></i>
-                                </span>
-                            </a>
-                        </li>
                     </ul>
                 </div>
                         

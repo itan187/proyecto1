@@ -17,7 +17,7 @@ class LoginController extends Controller
         if(count($checkLogin) >0){
             //echo "Login Correcto";
           //  return view('uploads');
-          return redirect('/upload');
+          return redirect('/inicio');
         }else{
             echo "Login no correcto falla en el password ";
         }

@@ -22,46 +22,33 @@
         
 </head>
 <body>
-        <div class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
-                <a class="navbar-brand" href="index.php">
-                    
-                </a>
-                <div class="collapse navbar-collapse justify-content-between" id="navbar-collapse">
-                    <ul class="navbar-nav">
-
-                        <li class="nav-item">
-
-                            <a class="nav-link" href="index.php">Inicio </a>
-
-                        </li>
-
-                        <li class="nav-item">
-
-                            <a class="nav-link" href="documentation/index.html">Vista General</a>
-
-                        </li>
-
-                        <li class="nav-item">
-
-                            <a class="nav-link" href="documentation/changelog.html">Soporte </a>
-
-                        </li>
-
-                    </ul>
-                        <div class="d-none d-lg-block">
-                            <div class="dropdown">
-                                <a href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img alt="Image" src="imag/escudo.png" class="avatar">
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a href="nav-side-user.html" class="dropdown-item">Profile</a>
-                                    <a href="utility-account-settings.html" class="dropdown-item">Account Settings</a>
-                                    <a href="#" class="dropdown-item">Log Out</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+                        <ul class="navbar-nav">
+                                <li class="nav-item">
+                                        <a class="nav-link" href="{{ url('/inicio') }}">Inicio  </a>
+                                    </li>
+                                    <li class="nav-item {{ request()->is('Vista general') ? 'active' : '' }}">
+                                        <a class="nav-link" href="{{ url('/vistaGeneral') }}">Panel de Control</a>  
+                                    </li>
+                                    <li class="nav-item">  
+                                        <a class="nav-link" href="documentation/changelog.html">Soporte </a>   
+                                    </li>
+                                    <li>
+                                            <div class="d-none d-lg-block">
+                                                    <div class="dropdown">
+                                                            <a href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                <img alt="Image" src="imag/escudo.png" class="avatar">
+                                                            </a>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <a href="{{ url('user/profile') }}" class="dropdown-item">Perfil</a>
+                                                            <a href="utility-account-settings.html" class="dropdown-item">Configuracion de la cuenta</a>
+                                                            <a href="" class="dropdown-item">Cerrar session</a>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                </li>
+                        </ul>
+                </nav>
             </div>
 
        

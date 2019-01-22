@@ -41,7 +41,7 @@ class UploadController extends Controller
         $this->archivo->ruta = $this->uploadFactura();
         $this->archivo->nombre = $this->request->get('nomArchivo');
         $this->archivo->save();
-
+        
         $this->clientes->fill($this->request->all())->save();
         return response()->json(['success' => true, 'message' => 'Información guardada correctamente']);
     }

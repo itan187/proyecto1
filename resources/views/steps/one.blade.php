@@ -2,12 +2,15 @@
     <form method="post" enctype="multipart/form-data" id="formDataStepOne">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="step1">
-            <div class="row">
+                <div class=".col-6 .col-md-4">
+                        <h2>SOLICITUD DE COTIZACIÓN</h2>
+                </div>
+                <div class="row">
                 <div class="col-md-6 form-group">
                     <label class=" col-sm-4" for="email">No. de Cotización: </label>
                     <p class="form-control-static">Prodemex 001 swj</p>
                 </div>
-                
+
                 <div class="col-md-6"></div>
 
                 <div class="col-md-6 form-group">
@@ -16,18 +19,8 @@
                 </div>
 
                 <div class="col-md-6 form-group">
-                    <label for="exampleInputEmail1" class="control-label">Abreviación:</label>
-                    <input type="text" class="form-control" id="abreviation" placeholder="Abreviacion" name="abreviation" required>
-                </div>
-
-                <div class="col-md-6 form-group">
                     <label for="exampleInputEmail1">Pago Anticipo: </label>
                     <input type="text" class="form-control" id="anticipo" placeholder="Anticipo" name="anticipo" required>
-                </div>
-
-                <div class="col-md-6 form-group">
-                    <label for="exampleInputEmail1">Direccion: </label>
-                    <input type="text" class="form-control" id="direction" placeholder="Direccion" name="direction" required>
                 </div>
             </div>
         
