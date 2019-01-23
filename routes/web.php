@@ -20,5 +20,6 @@ Route::get('user/profile','ProfileController@profile')->name('profile');
 Route::post('user/updateprofile', 'ProfileController@updateProfile');
 
 //Rutas Vista 
-
 Route::get('user/high_user','High_UserController@users');
+
+Route::get('projects/projects','ProyectsController@projects');
