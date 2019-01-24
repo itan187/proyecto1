@@ -34,7 +34,7 @@
                                 <img src="imag/logo.png" alt="IMG">
                             </div>
 
-            <form action="/loginme" method="post" class="login100-form validate-form">
+            <form action="/loginme" method="post" id ="form" class="login100-form validate-form">
                 <span class="login100-form-title"><strong>LOGIN SSCOMP</strong></span>
                 
                 <div class="wrap-input100 validate-input" data-validate = "Validar Usuario">
@@ -63,9 +63,5 @@
 </body>
 </html>
 <script type="text/javascript">
-  
-
     $("#form")[0].reset();
-    
-    
     </script>
